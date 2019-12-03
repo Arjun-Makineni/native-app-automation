@@ -1,0 +1,13 @@
+{
+    "pushio": {
+        "platformName": "iPhone",
+        "apiKey": "ABEvBwNrYHL22Ip7zX-hocAZg",
+        "accountToken": "ABEpAUCInTBybjk1GnqFj95Dw",
+        "appName": "River Island QA",
+        "conversionUrl": "https://mailer.riverisland.com/pub/cct",
+        "riAppId": "16000002",
+        "bundleId": "com.nn4m.riverisland.qa",
+        "platform_type": "apns",
+        "apiHost": "api.pushio.com"
+    }
+}

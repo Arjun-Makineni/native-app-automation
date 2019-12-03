@@ -1,0 +1,10 @@
+group 'com.riverisland.apps.core'
+version '1.0.0'
+
+configurations.testCompile.exclude module: 'openqa'
+
+dependencies {
+    compile project(':app-config')
+    testCompile project(':app-config')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}

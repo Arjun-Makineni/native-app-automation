@@ -1,0 +1,8 @@
+# Gift Card Service Config
+---
+tokenRequestServiceUrl: https://riverisland.eu.auth0.com
+clientId: o8zzu3kUdkssCzICjQxieku23C8AFCiJ
+clientSecret: Vm2bWhORP49AxhfuH-cIOklQlsick53q4zggfHW_bqTI0f-B7XJ-8J4K48_x8OVF
+audience: https://giftcard-api.dev.payment.ri-tech.io/
+grantType: client_credentials
+apiServiceUrl: https://giftcard.dev.payment.ri-tech.io

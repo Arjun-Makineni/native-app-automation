@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Smoke">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+
+    <test name="Smoke Tests (Android)" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <exclude name="bug"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.riverisland.android.test.AndroidTest"/>
+            <class name="com.riverisland.app.automation.test.RiverIslandAppTest"/>
+            <class name="com.riverisland.android.test.CheckoutTests"/>
+            <class name="com.riverisland.android.test.MyRITests"/>
+            <class name="com.riverisland.android.test.ProductDetailsPageTests"/>
+            <class name="com.riverisland.android.test.ProductLandingPageTests"/>
+            <class name="com.riverisland.android.test.ShoppingBagTests"/>
+            <class name="com.riverisland.android.test.WishlistTests"/>
+        </classes>
+    </test>
+</suite>

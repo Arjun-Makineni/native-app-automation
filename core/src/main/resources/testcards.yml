@@ -1,0 +1,29 @@
+# Test Cards
+---
+cardType: American Express
+cardNumber: 370000000000002
+securityCode: 7373
+expiryMonth: October
+expiryYear: 2020
+is3DSecure: false
+---
+cardType: Visa
+cardNumber: 4646464646464644
+securityCode: 737
+expiryMonth: October
+expiryYear: 2020
+is3DSecure: false
+---
+cardType: Mastercard
+cardNumber: 5555444433331111
+securityCode: 737
+expiryMonth: October
+expiryYear: 2020
+is3DSecure: false
+---
+cardType: Maestro
+cardNumber: 6731012345678906
+securityCode: 737
+expiryMonth: October
+expiryYear: 2020
+is3DSecure: true

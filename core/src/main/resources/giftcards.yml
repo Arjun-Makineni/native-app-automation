@@ -1,0 +1,74 @@
+# Gift Cards
+---
+description: UK(GBP)-10
+number: 6338702344900627
+pin: 3448
+currencyCode: GBP
+initialValue: 10.00
+---
+description: UK(GBP)-20
+number: 6338702344900635
+pin: 7537
+currencyCode: GBP
+initialValue: 20.00
+---
+description: UK(GBP)-30
+number: 6338702344900643
+pin: 2677
+currencyCode: GBP
+initialValue: 30.00
+---
+description: UK(GBP)-40
+number: 6338702344900650
+pin: 3077
+currencyCode: GBP
+initialValue: 40.00
+---
+description: UK(GBP)-50
+number: 6338702344900668
+pin: 2864
+currencyCode: GBP
+initialValue: 50.00
+---
+description: UK(GBP)-60
+number: 6338702344900676
+pin: 1675
+currencyCode: GBP
+initialValue: 60.00
+---
+description: ROI(EUR)-10
+number: 6338702344900628
+pin: 4632
+currencyCode: EUR
+initialValue: 10.00
+---
+description: ROI(EUR)-20
+number: 6338707359900636
+pin: 0037
+currencyCode: EUR
+initialValue: 20.00
+---
+description: ROI(EUR)-30
+number: 6338707359900644
+pin: 8536
+currencyCode: EUR
+initialValue: 30.00
+---
+description: ROI(EUR)-40
+number: 6338707359900651
+pin: 0541
+currencyCode: EUR
+initialValue: 40.00
+---
+description: ROI(EUR)-50
+number: 6338707359900669
+pin: 4239
+currencyCode: EUR
+initialValue: 50.00
+---
+description: ROI(EUR)-60
+number: 6338707359900677
+pin: 3177
+currencyCode: EUR
+initialValue: 60.00
+---

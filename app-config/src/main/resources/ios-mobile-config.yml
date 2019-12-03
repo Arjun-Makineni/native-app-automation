@@ -1,0 +1,23 @@
+---
+deviceType: SIMULATOR
+capabilities:
+    app: QARI_v6.1.3(f9bf926).app
+    automationName: XCUITest
+    platformName: iOS
+    platformVersion: 12.1
+    deviceName: iPhone X
+    newCommandTimeout: 300
+    browserName: ""
+    noReset: true
+---
+deviceType: REAL_DEVICE
+capabilities:
+    app: kobiton-store:35436
+    automationName: XCUITest
+    platformName: iOS
+    platformVersion: 12.0
+    newCommandTimeout: 180
+    browserName: ""
+    deviceGroup: KOBITON
+    deviceName: iPhone X
+    captureScreenshots: true

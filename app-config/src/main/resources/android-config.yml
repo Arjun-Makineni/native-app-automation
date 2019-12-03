@@ -1,0 +1,28 @@
+---
+deviceType: EMULATOR
+bundleId: com.riverisland.android.qa
+capabilities:
+    app: app/QARIdroid_v4.2.6(4331137).apk
+    automationName: uiautomator2
+    platformName: Android
+    deviceName: Android Emulator
+    newCommandTimeout: 180
+    browserName: ""
+    avd: Nexus_5_API_26
+    appWaitActivity: com.riverisland.android.*
+    noReset: true
+---
+deviceType: REAL_DEVICE
+bundleId: com.riverisland.android.qa
+capabilities:
+    app: kobiton-store:35396
+    automationName: uiautomator2
+    platformName: Android
+    platformVersion: 8.0.0
+    newCommandTimeout: 180
+    browserName: ""
+    deviceGroup: KOBITON
+    deviceName: Nexus 5X
+    deviceId: 17524
+    captureScreenshots: true
+    appWaitActivity: com.riverisland.android.*

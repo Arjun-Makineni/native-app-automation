@@ -1,0 +1,75 @@
+import groovy.json.JsonSlurper
+
+plugins {
+    id "org.sonarqube" version "2.7"
+}
+
+group 'com.riverisland.apps.automation'
+version '2019-Pre-6.0'
+
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'native-app-automation'
+        property 'sonar.projectKey', 'native-app-automation'
+        property 'sonar.host.url', 'http://onprem-sonarqube.prod.transit.ri-tech.io:80/'
+        property 'sonar.branch.name', deriveBranchFromTrigger()
+    }
+}
+
+subprojects {
+    sonarqube {
+        properties {
+            property 'sonar.sources', 'src'
+            property 'sonar.test.exclusions', '**/test/**'
+            property 'sonar.java.binaries', 'build'
+        }
+    }
+}
+
+static def deriveBranchFromTrigger() {
+    if (System.getProperty("buildTrigger").toString().toLowerCase() == "master") {
+        return "master"
+    } else {
+        File pullRequestMetadata = new File('.git/resource/metadata.json')
+        if (pullRequestMetadata.exists()) {
+            def parsedJson = new JsonSlurper().parse(pullRequestMetadata)
+            def headBranch = parsedJson.find { it.name == 'head_name' }
+            return headBranch.value
+        } else {
+            File file = new File(".git/HEAD")
+            String[] stringArray = file.text.split("heads/")
+            return stringArray[1]
+        }
+    }
+}
+
+allprojects {
+
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        compile group: 'org.testng', name: 'testng', version: '6.11'
+        compile group: 'com.google.inject', name: 'guice', version: '4.0'
+        compile group: 'io.appium', name: 'java-client', version: '6.1.0'
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+        compile group: 'org.yaml', name: 'snakeyaml', version: '1.18'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.7'
+        compile group: 'org.assertj', name: 'assertj-core', version: '3.8.0'
+        compile 'io.rest-assured:rest-assured:3.0.3'
+        compile group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '3.4.0'
+        compile group: 'log4j', name: 'log4j', version: '1.2.17'
+        compile 'io.github.prashant-ramcharan:webdriver-binary-downloader:1.2.2'
+        compile group: 'org.springframework', name: 'spring-web', version: '4.3.2.RELEASE'
+
+        // Exclude testng reference in reportng due to clashing versions!
+        compile(group: 'org.uncommons', name: 'reportng', version: '1.1.4') {
+            exclude group: 'org.testng', module: 'testng'
+        }
+    }
+}

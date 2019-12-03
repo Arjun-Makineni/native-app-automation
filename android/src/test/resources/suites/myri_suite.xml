@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MyRI">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+
+    <test name="My River Island Tests (Android)" preserve-order="true">
+        <groups>
+            <run>
+                <exclude name="bug"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.riverisland.android.test.AndroidTest"/>
+            <class name="com.riverisland.app.automation.test.RiverIslandAppTest"/>
+            <class name="com.riverisland.android.test.MyRITests"/>
+        </classes>
+    </test>
+</suite>

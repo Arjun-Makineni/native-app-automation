@@ -1,0 +1,38 @@
+provider: CLOUD
+
+riverIslandUserCredentials:
+ email: riautotest@gmail.com
+ password: riverisland123
+
+environment:
+  name: UAT3 # this value is case sensitive
+  forceChange: false
+
+retryTestFailureLimit: 0
+
+tcplApiCredentials:
+ - environment: UAT1
+   serviceUrl: https://uat1.riuat.com/api
+   apiKey: sRiWS6EHI8PdPhrM05QsKzl8p1o/IpuS2gkpZs9G2s4=
+
+ - environment: UAT2
+   serviceUrl: https://uat2.riuat.com/api
+   apiKey: T/J7kExUX/d0A7HLv6A1VFIGOLQ2ULiucqYZMJ0yd7w=
+
+ - environment: UAT3
+   serviceUrl: https://uat3.riuat.com/api
+   apiKey: NHckvFqDlSS6S9uusPxn9rpOMatG5nlRekF4+5VI4H0=
+
+ - environment: PreProd
+   serviceUrl: https://www.ripreprod.com/api
+   apiKey: 0thv0xvXPKSaIQhrbQb5Tr8yW8dlF3tjSf7tzr6zOi4=
+
+appiumServer:
+ - provider: LOCAL
+   url: http://localhost:4723/wd/hub
+   autoStart: true # set to false if the Appium server is started independently
+
+ - provider: CLOUD
+   url: https://simonj:993702ac-41c8-47c6-a4f7-a29cb70ce878@api.kobiton.com/wd/hub
+   apiAuth: cHJhc2hhbnRyOjFjMTNjNzc5LTI1NzQtNGJiNi04ZmI4LWM5Y2MwOTczYzRlZg==
+   autoStart: false

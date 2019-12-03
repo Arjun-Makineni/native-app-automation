@@ -1,0 +1,91 @@
+{
+    "Sections": [
+        {
+            "Rows": [
+                {
+                    "Label": "Trending",
+                    "Action": "NN4MRI::GOTO_TRENDING",
+                    "LabelKey": "AccountTrendingLabel"
+                },
+                {
+                    "isUGC":true,
+                    "AuthenticationRequired":false,
+                    "Label":"#ImWearingRI",
+                    "Action":"NN4MRI::GOTO_UGC_GALLERY",
+                    "LabelSecondaryKey":"AccountUGCNewLabel",
+                    "LabelKey":"UGCTitle"
+                }
+            ]
+        },
+        {
+            "Title": "My Account",
+            "Rows": [
+                {
+                    "AuthenticationRequired": true,
+                    "Label": "Order History",
+                    "Action": "NN4MRI::GOTO_ORDER_HISTORY",
+                    "signedIn": "true",
+                    "LabelKey": "AccountOrderHistoryLabel"
+                },
+                {
+                    "isAddressBook": true,
+                    "Label": "Address Book",
+                    "Action": "NN4MRI::GOTO_ADDRESS_BOOK",
+                    "LabelSecondaryKey":"AccountAddressBookNewLabel",
+                    "LabelKey": "AccountAddressBookLabel",
+                    "AuthenticationRequired": true,
+                    "signedIn": "true"
+                },
+                {
+                    "LabelKey": "AccountRecentlyViewedLabel",
+                    "Label": "Recently Viewed",
+                    "Action": "NN4MRI::GOTO_RECENTLY_VIEWED"
+                },
+                {
+                    "LabelKey": "AccountChangeCurrencyLabel",
+                    "Label": "Change Currency",
+                    "Action": "NN4MRI::GOTO_CHANGE_CURRENCY"
+                },
+                {
+                    "Label": "Sign Out",
+                    "signedIn": "true",
+                    "Action": "NN4MRI::GOTO_SIGN_OUT",
+                    "LabelKey": "AccountSignOutLabel"
+                },
+                {
+                    "Label": "Sign In",
+                    "signedIn": "false",
+                    "Action": "NN4MRI::GOTO_SIGN_IN",
+                    "LabelKey": "AccountSignInLabel"
+                }
+            ],
+            "TitleKey": "AccountMyAccountSectionTitle"
+        },
+        {
+            "Title": "Info & Help",
+            "Rows": [
+                {
+                    "LabelKey": "AccountStoreLocatorLabel",
+                    "Label": "Store Locator",
+                    "Action": "NN4MRI::GOTO_STORES"
+                },
+                {
+                    "LabelKey": "AccountScanInstoreLabel",
+                    "Label": "Scan In-store",
+                    "Action": "NN4MRI::GOTO_SCANNER"
+                },
+                {
+                    "Label": "Settings",
+                    "LabelKey": "AccountSettingsLabel",
+                    "Action": "NN4MRI::GOTO_SETTINGS"
+                },
+                {
+                    "Label": "Help & Support",
+                    "LabelKey": "AccountHelpSuppportLabel",
+                    "Action": "NN4MRI::GOTO_HELP"
+                }
+            ],
+            "TitleKey": "AccountInfoSectionTitle"
+        }
+    ]
+}

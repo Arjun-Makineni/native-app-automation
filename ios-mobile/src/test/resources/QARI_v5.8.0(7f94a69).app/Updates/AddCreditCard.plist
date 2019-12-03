@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Sections</key>
+	<array>
+		<dict>
+			<key>Rows</key>
+			<array>
+				<dict>
+					<key>CellIdentifier</key>
+					<string>Scan</string>
+					<key>Form Field</key>
+					<string>{SCAN}</string>
+					<key>Required</key>
+					<false/>
+					<key>Type</key>
+					<string>SCAN</string>
+				</dict>
+				<dict>
+					<key>Form Field</key>
+					<string>{CARD_TYPE}</string>
+					<key>Header</key>
+					<string>SELECT CARD TYPE</string>
+					<key>LabelKey</key>
+					<string>AddCardType</string>
+					<key>Options</key>
+					<array>
+						<dict>
+							<key>Label</key>
+							<string>Visa</string>
+							<key>Value</key>
+							<string>visa</string>
+						</dict>
+						<dict>
+							<key>Label</key>
+							<string>Mastercard</string>
+							<key>Value</key>
+							<string>mc</string>
+						</dict>
+						<dict>
+							<key>Label</key>
+							<string>American Express</string>
+							<key>Value</key>
+							<string>amex</string>
+						</dict>
+						<dict>
+							<key>Label</key>
+							<string>Maestro</string>
+							<key>Value</key>
+							<string>maestro</string>
+						</dict>
+					</array>
+					<key>Required</key>
+					<true/>
+					<key>Type</key>
+					<string>OPTIONS</string>
+				</dict>
+				<dict>
+					<key>Form Field</key>
+					<string>{CARDNUMBER}</string>
+					<key>KeyboardType</key>
+					<string>NUMERIC</string>
+					<key>PlaceholderKey</key>
+					<string>CardDetailsCardNumberPlaceholder</string>
+					<key>Required</key>
+					<true/>
+					<key>Type</key>
+					<string>TEXT</string>
+				</dict>
+				<dict>
+					<key>isExpiry</key>
+					<true/>
+					<key>Form Field</key>
+					<string>{CARDEXPIRY}</string>
+					<key>KeyboardType</key>
+					<string>NUMERIC</string>
+					<key>PlaceholderKey</key>
+					<string>AddCardExpiryPlaceholder</string>
+					<key>Required</key>
+					<true/>
+					<key>Type</key>
+					<string>TEXT</string>
+					<key>Validation</key>
+					<dict>
+						<key>MaxChars</key>
+						<string>5</string>
+						<key>MinChars</key>
+						<string>5</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Form Field</key>
+					<string>{CVV}</string>
+					<key>KeyboardType</key>
+					<string>NUMERIC</string>
+					<key>PlaceholderKey</key>
+					<string>CardDetailsCvvPlaceholder</string>
+					<key>Required</key>
+					<true/>
+					<key>Type</key>
+					<string>TEXT</string>
+				</dict>
+				<dict>
+					<key>Default</key>
+					<string>off</string>
+					<key>Form Field</key>
+					<string>{SAVEDETAILS}</string>
+					<key>LabelKey</key>
+					<string>PaymentOptionsViewSaveNewCardLabel</string>
+					<key>Type</key>
+					<string>CHECKBOX</string>
+				</dict>
+			</array>
+			<key>SectionNameKey</key>
+			<string>AddCardSectionHeader</string>
+		</dict>
+	</array>
+</dict>
+</plist>

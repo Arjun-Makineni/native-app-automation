@@ -1,0 +1,48 @@
+group 'com.riverisland.apps.android'
+version '1.0.0'
+
+dependencies {
+    compile project(':core')
+}
+
+sourceSets {
+    test {
+        resources {
+            // un-comment the statement below before running the 'bundleAwsTests' task
+            // exclude '**/*.apk'
+        }
+    }
+}
+
+test {
+    useTestNG {
+        suites 'src/test/resources/suites/regression.xml'
+    }
+}
+
+task copyDependencies(type: Copy) {
+    into "build/libs/dependency-jars"
+    from configurations.compile
+}
+
+task createTestJar(type: Jar) {
+    dependsOn copyDependencies
+    classifier = 'tests'
+    from(sourceSets.test.output + sourceSets.test.allSource)
+}
+
+task bundleAwsTests(type: Zip) {
+    from "build/libs/"
+    include '*'
+    include '*/*'
+    archiveName 'zip-with-dependencies.zip'
+    destinationDir(file('build/aws-test-bundle'))
+}
+
+task testRegression(type: Test) {
+	useTestNG() {
+		useDefaultListeners = true
+		suites 'src/test/resources/suites/checkout_suite.xml'
+		includeGroups 'regression'
+	}
+}

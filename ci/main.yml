@@ -1,0 +1,115 @@
+resources:
+  - name: image_java-8-jdk-slim
+    type: docker-image
+    source:
+      repository: openjdk
+      tag: 8-jdk-slim
+
+  - name: git_pr_native-app-automation
+    type: pull-request
+    source:
+      repository: River-Island/native-app-automation
+      access_token: ((github_access_key))
+
+  - name: git_repo_native-app-automation
+    type: git
+    source:
+      uri: git@github.com:River-Island/native-app-automation.git
+      branch: master
+      access_token: ((github_access_key))
+      private_key: ((github_private_key))
+
+resource_types:
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: teliaoss/github-pr-resource
+
+jobs:
+  - name: pr-compile
+    public: true
+    plan:
+      - get: git_pr_native-app-automation
+        trigger: true
+        version: every
+      - get: image_java-8-jdk-slim
+      - task: compile
+        image: image_java-8-jdk-slim
+        config:
+          platform: linux
+          inputs:
+            - name: git_pr_native-app-automation
+          run:
+            dir: git_pr_native-app-automation/ci
+            path: sh
+            args:
+              - "-ec"
+              - |
+                ./ci_compile.sh
+        on_success:
+          put: git_pr_native-app-automation
+          params:
+            path: git_pr_native-app-automation
+            status: success
+            context: native-app-automation-compile
+        on_failure:
+          put: git_pr_native-app-automation
+          params:
+            path: git_pr_native-app-automation
+            status: failure
+            context: native-app-automation-compile
+
+  - name: pr-sonarqube
+    public: true
+    plan:
+      - get: git_pr_native-app-automation
+        passed: ["pr-compile"]
+        trigger: true
+        version: every
+      - get: image_java-8-jdk-slim
+      - task: sonarqube-pr
+        image: image_java-8-jdk-slim
+        config:
+          platform: linux
+          inputs:
+            - name: git_pr_native-app-automation
+          run:
+            dir: git_pr_native-app-automation/ci
+            path: sh
+            args:
+              - "-ec"
+              - |
+                ./publish_to_sonarqube.sh pull-request
+        on_success:
+          put: git_pr_native-app-automation
+          params:
+            path: git_pr_native-app-automation
+            status: success
+            context: native-app-automation-sonarqube
+        on_failure:
+          put: git_pr_native-app-automation
+          params:
+            path: git_pr_native-app-automation
+            status: failure
+            context: native-app-automation-sonarqube
+
+  - name: master-sonarqube
+    public: true
+    plan:
+      - get: git_repo_native-app-automation
+        trigger: true
+        version: every
+      - get: image_java-8-jdk-slim
+      - task: build-and-publish
+        image: image_java-8-jdk-slim
+        config:
+          platform: linux
+          inputs:
+            - name: git_repo_native-app-automation
+          run:
+            dir: git_repo_native-app-automation/ci
+            path: sh
+            args:
+              - "-ec"
+              - |
+                ./publish_to_sonarqube.sh master

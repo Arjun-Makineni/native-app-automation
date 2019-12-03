@@ -1,0 +1,14 @@
+group 'com.riverisland.apps.ios-mobile'
+version '1.0.0'
+
+dependencies {
+    testCompile project(':core')
+}
+
+task testRegression(type: Test) {
+	useTestNG() {
+		useDefaultListeners = true
+		suites 'src/test/resources/suites/checkout_suite.xml'
+		includeGroups 'regression'
+	}
+}

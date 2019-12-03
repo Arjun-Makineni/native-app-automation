@@ -1,0 +1,176 @@
+{
+    "Actions": [
+                {
+                "Name": "GOTO_HOME",
+                "Class": "NRIGoToHomeAction"
+                },
+                {
+                "Name": "GOTO_ENVIRONMENTS",
+                "Class": "NRIGoToEnvironmentsAction"
+                },
+                {
+                "Class": "NRIGoToEnvironmentsAction",
+                "Name": "GOTO_QA"
+                },
+                {
+                "Name": "ALERT",
+                "Class": "NRIDisplayAlertAction"
+                },
+                {
+                "Name": "GOTO_URL",
+                "Class": "NRIGoToURLAction"
+                },
+                {
+                "Name": "GOTO_SIGN_IN",
+                "Class": "NRIGoToSignIn"
+                },
+                {
+                "Name": "GOTO_LOGIN",
+                "Class": "NRIGoToSignIn"
+                },
+                {
+                "Name": "GOTO_SIGN_OUT",
+                "Class": "NRIGoToSignOut"
+                },
+                {
+                "Name": "GOTO_ORDER_HISTORY",
+                "Class": "NRIGoToOrderHistory"
+                },
+                {
+                "Name": "GOTO_ORDER",
+                "Class": "NRIGoToOrderDetailsAction"
+                },
+                {
+                "Name": "GOTO_PRODUCT_LIST",
+                "Class": "NRIGotoProductListAction"
+                },
+                {
+                "Name": "GOTO_PRODUCTLIST",
+                "Class": "NRIGotoProductListAction"
+                },
+                {
+                "Name": "GOTO_SHOP",
+                "Class": "NRIGoToShopAction"
+                },
+                {
+                "Name": "GOTO_CATEGORY",
+                "Class": "NRIGoToShopAction"
+                },
+                {
+                "Name": "GOTO_STORES",
+                "Class": "NRIGoToStoresAction"
+                },
+                {
+                "Name": "GOTO_STORE",
+                "Class": "NRIGoToStoreDetailsAction"
+                },
+                {
+                "Name": "GOTO_RECENTLY_VIEWED",
+                "Class": "NRIGoToRecentlyViewed"
+                },
+                {
+                "Name": "GOTO_HELP",
+                "Class": "NRIGoToHelpAction"
+                },
+                {
+                "Name": "GOTO_SETTINGS",
+                "Class": "NRIGoToSettings"
+                },
+                {
+                "Name": "FAQ",
+                "Class": "NRIGoToFAQAction"
+                },
+                {
+                "Name": "GOTO_FAQ",
+                "Class": "NRIGoToFAQAction"
+                },
+                {
+                "Name": "GOTO_RETURNS",
+                "Class": "NRIGoToFAQReturnsAction"
+                },
+                {
+                "Name": "GOTO_Delivery",
+                "Class": "NRIGoToFAQDeliveryAction"
+                },
+                {
+                "Name": "GOTO_SCAN",
+                "Class": "NRIGoToScannerAction"
+                },
+                {
+                "Name": "GOTO_SCANNER",
+                "Class": "NRIGoToScannerAction"
+                },
+                {
+                "Name": "CHANGE_CURRENCY",
+                "Class": "NRIGoToCurrencyAction"
+                },
+                {
+                "Name": "GOTO_CHANGE_CURRENCY",
+                "Class": "NRIGoToCurrencyAction"
+                },
+                {
+                "Name": "GOTO_SIZEGUIDES",
+                "Class": "NRIGoToSizeGuideAction"
+                },
+                {
+                "Name": "GOTO_SIZE_GUIDES",
+                "Class": "NRIGoToSizeGuideAction"
+                },
+                {
+                "Name": "CONTACTUS",
+                "Class": "NRIGoToContactUsAction"
+                },
+                {
+                "Name": "GOTO_CONTACT_US",
+                "Class": "NRIGoToContactUsAction"
+                },
+                {
+                "Name": "GOTO_ONBOARDING",
+                "Class": "NRIGoToOnboardingAction"
+                },
+                {
+                "Name": "GOTO_BAG",
+                "Class": "NRIGoToBagAction"
+                },
+                {
+                "Name": "SIGNUP",
+                "Class": "NRINewsLetterAction"
+                },
+                {
+                "Name": "GOTO_SIGN_UP",
+                "Class": "NRINewsLetterAction"
+                },
+                {
+                "Name": "GOTO_MYACCOUNT",
+                "Class": "NRIGotoAccountAction"
+                },
+                {
+                "Name": "GOTO_ACCOUNT",
+                "Class": "NRIGotoAccountAction"
+                },
+                {
+                "Name": "GOTO_PRODUCT",
+                "Class": "NRIGotoProductDetailsAction"
+                },
+                {
+                "Name": "GOTO_WISHLIST",
+                "Class": "NRIGoToWishListAction"
+                },
+                {
+                "Name": "TERMSANDCONDITIONS",
+                "Class": "NRIGoToTermsAction"
+                },
+                {
+                "Name": "GOTO_REGISTER",
+                "Class": "NRIGoToSignUpAction"
+                },
+                {
+                "Name": "GOTO_PERSONALISE_EDIT",
+                "Class": "NRIGoToPersonaliseEditAction"
+                },
+                {
+                "Name": "GOTO_TRENDING",
+                "Class": "NRIGotoTrendingAction"
+                }
+                ]
+}
